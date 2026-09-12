@@ -1,9 +1,14 @@
 import logoImg from '../assets/img/soulup-logo.png'
 import './Cabecalho.css'
 
-export function Cabecalho() {
+type CabecalhoProps = {
+  titulo: string
+}
+
+export function Cabecalho({ titulo }: CabecalhoProps) {
   return (
     <header className="cabecalho">
+      <h1>{titulo}</h1>
       <a href="/" className="cabecalho-link-logo">
         <span className="cabecalho-logo">S</span>
       </a>
