@@ -1,0 +1,75 @@
+.cabecalho {
+  width: 100%;
+  background-color: #231b54;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.cabecalho-link-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.cabecalho-logo {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/*Navegação*/
+.cabecalho-nav {
+  display: flex;
+  align-items: center;
+}
+
+.cabecalho-ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cabecalho-li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+/* Bullet */
+.cabecalho-bullet {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+}
+
+/* Navegação */
+.cabecalho-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.cabecalho-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
+  .cabecalho {
+    padding: 16px 20px;
+  }
+
+  .cabecalho-ul {
+    gap: 12px;
+  }
+}
