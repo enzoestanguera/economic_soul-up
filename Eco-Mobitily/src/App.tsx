@@ -25,7 +25,7 @@ export default function App() {
 
         {/* imagem metro */}
         <div className="hero-imagem">
-          <img src={metroImg} alt="Estação de metrô, um dos meios de transporte contemplados pelo projeto" className="image-index"/>
+        <img src={metroImg} alt="Estação de metrô, um dos meios de transporte contemplados pelo projeto" className="image-index"/>
         </div>
 
         {/* Seções */}

@@ -1,17 +1,40 @@
 import logoImg from '../assets/img/soulup-logo.png'
+import './Cabecalho.css'
 
 export function Cabecalho() {
   return (
     <header className="cabecalho">
-      <a href="/">
-        <img src={logoImg} alt="Logo da SoulUp" className="cabecalho-logo" />
+      <a href="/" className="cabecalho-link-logo">
+        <span className="cabecalho-logo">S</span>
       </a>
+
+      {/* menu de navegação */}
       <nav className="cabecalho-nav" aria-label="Navegação principal">
         <ul className="cabecalho-ul">
-          <li className="cabecalho-li"><a className="cabecalho-bg" href="/sobre">Sobre</a></li>
-          <li className="cabecalho-li"><a className="cabecalho-bg" href="/integrantes">Integrantes</a></li>
-          <li className="cabecalho-li"><a className="cabecalho-bg" href="/faq">FAQ</a></li>
-          <li className="cabecalho-li"><a className="cabecalho-bg" href="/contato">Contato</a></li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <a href="/sobre" className="cabecalho-link">
+              Sobre
+            </a>
+          </li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <a href="/integrantes" className="cabecalho-link">
+              Integrantes
+            </a>
+          </li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <a href="/faq" className="cabecalho-link">
+              FAQ
+            </a>
+          </li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <a href="/contato" className="cabecalho-link">
+              Contato
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
