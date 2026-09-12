@@ -1,3 +1,4 @@
+import { Cabecalho } from '../components/Cabecalho'
 import alvaroImg from '../assets/img/alvaro.jpg'
 import arthurImg from '../assets/img/arthur.jpg'
 import dhiegoImg from '../assets/img/dhiego.jpg'
@@ -42,3 +43,23 @@ const integrantes: Integrante[] = [
     linkedin: 'https://www.linkedin.com/in/giovane-dias-chicoli-b06b05384/',
   },
 ]
+
+function Integrantes() {
+  return (
+    <>
+      <Cabecalho titulo="Integrantes do Grupo" />
+
+      <h1 className="integrantes_h1">Integrantes do Grupo</h1>
+
+      <main className="integrantes_container">
+        
+      </main>
+
+      <footer>
+        <h4>&copy;1TDSPG</h4>
+      </footer>
+    </>
+  )
+}
+
+export default Integrantes
