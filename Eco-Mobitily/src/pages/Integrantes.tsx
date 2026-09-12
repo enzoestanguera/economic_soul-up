@@ -52,7 +52,19 @@ function Integrantes() {
       <h1 className="integrantes_h1">Integrantes do Grupo</h1>
 
       <main className="integrantes_container">
-        
+        {integrantes.map((pessoa) => (
+          <div className="integrante_card" key={pessoa.rm}>
+            <img src={pessoa.foto} alt={`Foto de ${pessoa.nome}`} className="integrante-foto" />
+            <h3>{pessoa.nome}</h3>
+            <p>RM: {pessoa.rm}</p>
+            <a href={pessoa.github} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a href={pessoa.linkedin} target="_blank" rel="noreferrer">
+              Linkedin
+            </a>
+          </div>
+        ))}
       </main>
 
       <footer>
