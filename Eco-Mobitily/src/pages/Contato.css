@@ -14,3 +14,25 @@
   object-fit: contain;
   margin: 20px 0;
 }
+#meuFormulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+#meuFormulario input,
+#meuFormulario textarea {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#meuFormulario textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#meuFormulario button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
