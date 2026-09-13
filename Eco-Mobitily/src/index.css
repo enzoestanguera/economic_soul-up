@@ -1,3 +1,30 @@
+:root {
+  --color-ink: #171b2e;
+  --color-indigo: #3b2f86;
+  --color-indigo-dark: #241d5c;
+  --color-azure: #1d8fe1;
+  --color-leaf: #2f9e5b;
+  --color-leaf-light: #e3f3e8;
+  --color-paper: #eef2ef;
+  --color-surface: #ffffff;
+  --color-line: #d7ddd9;
+  --color-muted: #5b6172;
+
+  --font-display: 'Poppins', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+
+  --container-max: 1100px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --shadow-card: 0 10px 30px rgba(23, 27, 46, 0.08);
+}
+
 @import "tailwindcss";
 
 /* Reset Css uniforme e comportamento do css */
@@ -12,6 +39,8 @@ body {
   position: relative;
   min-height: 100vh;
   background-color: #f8fafc;
+  color: var(--color-ink);
+  font-family: var(--font-body);
 }
 
 body::before {
@@ -32,7 +61,7 @@ body::before {
 /*Container*/
 .container {
   width: 100%;
-  max-width: 1100px;
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: 32px 24px;
 }
