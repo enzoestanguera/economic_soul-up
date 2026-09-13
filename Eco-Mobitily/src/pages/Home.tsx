@@ -8,16 +8,14 @@ function Home() {
 
       <main>
         <section>
-          <div>
-            <h1 className="index-cabecalho">
-              Contextualização Inicial do Projeto
-            </h1>
+          <h1 className="index-cabecalho">
+            Contextualização Inicial do Projeto
+          </h1>
 
-            <p>
-              Nós escolhemos o segundo desafio proposto dentro dos 3 possíveis
-              no Challenge Soul Up.
-            </p>
-          </div>
+          <p>
+            Nós escolhemos o segundo desafio proposto dentro dos 3 possíveis
+            no Challenge Soul Up.
+          </p>
         </section>
 
         <section>
