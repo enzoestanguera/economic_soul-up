@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import './Cabecalho.css'
 
-export function Cabecalho() {
+type CabecalhoProps = {
+  titulo: string
+}
+
+export function Cabecalho({ titulo }: CabecalhoProps) {
   return (
     <header className="cabecalho">
       <Link to="/" className="cabecalho-link-logo">
