@@ -1,0 +1,30 @@
+.faq-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-pergunta {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.faq-resposta {
+  padding: 15px;
+}
+
+.faq-item.ativo .faq-pergunta {
+  font-weight: bold;
+}
