@@ -48,3 +48,12 @@
   padding: 10px 20px;
   cursor: pointer;
 }
+.mensagem-sucesso {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.mensagem-erro {
+  margin-top: 10px;
+  font-weight: bold;
+}

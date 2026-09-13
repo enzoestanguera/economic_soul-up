@@ -5,10 +5,24 @@ import './Faq.css'
 function Faq() {
   const [abertaIndex, setAbertaIndex] = useState<number | null>(null)
   const [comentario, setComentario] = useState('')
+  const [status, setStatus] =
+  useState<'idle' | 'sucesso' | 'erro'>('idle')
 
   function alternarPergunta(index: number) {
-    setAbertaIndex((atual) => (atual === index ? null : index))
+  setAbertaIndex((atual) => (atual === index ? null : index))
+}
+
+function enviarComentario() {
+  if (comentario.trim() !== '') {
+    setStatus('sucesso')
+    setComentario('')
+  } else {
+    setStatus('erro')
   }
+
+  setTimeout(() => setStatus('idle'), 4000)
+}
+
 
   return (
     <>
@@ -92,9 +106,21 @@ function Faq() {
           onChange={(evento) => setComentario(evento.target.value)}
         />
 
-        <button id="btn-enviar-caixa">
+        <button id="btn-enviar-caixa" onClick={enviarComentario}>
           Enviar
-        </button>
+       </button>
+
+{status === 'sucesso' && (
+  <p className="mensagem-sucesso">
+    Enviado com sucesso.
+  </p>
+)}
+
+{status === 'erro' && (
+  <p className="mensagem-erro">
+    Por favor, digite uma mensagem.
+  </p>
+)}
       </div>
 
     </>
