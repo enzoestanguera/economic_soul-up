@@ -13,7 +13,7 @@ No projeto utilizamos mais HTML, TAILWIND, REACT, VITE e TYPESCRIPT.
 Nas pastas, temos a src que contém todo o conteúdo, a assets, contendo a pasta img, com as imagens, apasta components com o cabeçalho do site e a pasta pages, onde ficam todas as pastas do site.
 
 Para executar esse projeto localmente, abra o terminal git bash no Visual Studio Code, e use o comando 
-npm install para instalar as dependências do projeto e após isso usar o comando npm run dev para executar o código e ver o site.
+npm install para instalar as dependências do projeto, como a pasta node_modules, e após isso usar o comando npm run dev para executar o código e ver o site.
 
 =============================================================== Integrantes ======================================================================
 Álvaro Morais Holanda - RM: 568607 Github: https://github.com/AlvaroHolanda Linkedin: https://www.linkedin.com/in/%C3%A1lvaro-holanda-b9bb03322/?isSelfProfile=true
