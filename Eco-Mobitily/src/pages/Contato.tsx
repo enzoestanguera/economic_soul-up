@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import type { FormEventHandler } from 'react'
 import { Cabecalho } from '../components/Cabecalho'
 import whatsappImg from '../assets/img/whatsapp.jpg'
 import './Contato.css'
@@ -7,6 +8,18 @@ function Contato() {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [mensagem, setMensagem] = useState('')
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (evento) => {
+    evento.preventDefault()
+
+    alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`)
+
+    setNome('')
+    setEmail('')
+    setMensagem('')
+  }
+
+ 
 
   
   return (
@@ -31,7 +44,7 @@ function Contato() {
             <b>E-mail:</b> giovanedc2007@gmail.com
           </p>
         </div>
-        <form id="meuFormulario">
+        <form id="meuFormulario" onSubmit={handleSubmit}>
   <h2>Envie uma mensagem</h2>
 
   <label htmlFor="nome">Nome</label>
