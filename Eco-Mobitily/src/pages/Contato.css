@@ -1,0 +1,16 @@
+.contato-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contatos {
+  text-align: center;
+}
+
+.icone-contato {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin: 20px 0;
+}
