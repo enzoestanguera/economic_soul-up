@@ -4,6 +4,7 @@ import './Faq.css'
 
 function Faq() {
   const [abertaIndex, setAbertaIndex] = useState<number | null>(null)
+  const [comentario, setComentario] = useState('')
 
   function alternarPergunta(index: number) {
     setAbertaIndex((atual) => (atual === index ? null : index))
@@ -79,8 +80,27 @@ function Faq() {
           )}
         </div>
       </section>
+            
+
+      <div className="caixa-flutuante">
+        <h3>Deixe seu comentário</h3>
+
+        <textarea
+          id="texto-usuario"
+          placeholder="Digite algo aqui..."
+          value={comentario}
+          onChange={(evento) => setComentario(evento.target.value)}
+        />
+
+        <button id="btn-enviar-caixa">
+          Enviar
+        </button>
+      </div>
+
     </>
   )
 }
 
 export default Faq
+
+ 

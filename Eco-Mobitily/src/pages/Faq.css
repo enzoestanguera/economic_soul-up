@@ -28,3 +28,23 @@
 .faq-item.ativo .faq-pergunta {
   font-weight: bold;
 }
+.caixa-flutuante {
+  max-width: 800px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.caixa-flutuante textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  margin: 10px 0;
+  resize: vertical;
+}
+
+#btn-enviar-caixa {
+  padding: 10px 20px;
+  cursor: pointer;
+}
