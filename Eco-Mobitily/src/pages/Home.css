@@ -1,0 +1,45 @@
+.hero {
+  padding: var(--space-5) 0 var(--space-3);
+}
+
+.hero__eyebrow {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.hero p {
+  font-size: 1rem;
+  max-width: 66ch;
+}
+
+.hero__imagem-wrap {
+  width: min(100%, 760px);
+  margin: var(--space-3) 0 var(--space-4);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 10px;
+  background: linear-gradient(135deg, #f4f8ff, #dcecff);
+  border: 2px solid var(--color-indigo-dark);
+  box-shadow: 0 14px 35px rgba(23, 27, 46, 0.12);
+}
+
+.image-index {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.secao {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.secao h2 {
+  margin-bottom: var(--space-1);
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: var(--space-4) 0 var(--space-3);
+  }
+}

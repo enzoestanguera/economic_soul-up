@@ -1,4 +1,4 @@
-import logoImg from '../assets/img/soulup-logo.png'
+import { Link } from 'react-router-dom'
 import './Cabecalho.css'
 
 type CabecalhoProps = {
@@ -8,40 +8,41 @@ type CabecalhoProps = {
 export function Cabecalho({ titulo }: CabecalhoProps) {
   return (
     <header className="cabecalho">
-      <h1>{titulo}</h1>
-      <a href="/" className="cabecalho-link-logo">
+      <Link to="/" className="cabecalho-link-logo">
         <span className="cabecalho-logo">S</span>
-      </a>
+      </Link>
 
       {/* menu de navegação */}
       <nav className="cabecalho-nav" aria-label="Navegação principal">
         <ul className="cabecalho-ul">
           <li className="cabecalho-li">
             <span className="cabecalho-bullet">•</span>
-            <a href="/sobre" className="cabecalho-link">
+            <Link to="/sobre" className="cabecalho-link">
               Sobre
-            </a>
+            </Link>
           </li>
           <li className="cabecalho-li">
             <span className="cabecalho-bullet">•</span>
-            <a href="/integrantes" className="cabecalho-link">
+            <Link to="/integrantes" className="cabecalho-link">
               Integrantes
-            </a>
+            </Link>
           </li>
           <li className="cabecalho-li">
             <span className="cabecalho-bullet">•</span>
-            <a href="/faq" className="cabecalho-link">
+            <Link to="/faq" className="cabecalho-link">
               FAQ
-            </a>
+            </Link>
           </li>
           <li className="cabecalho-li">
             <span className="cabecalho-bullet">•</span>
-            <a href="/contato" className="cabecalho-link">
+            <Link to="/contato" className="cabecalho-link">
               Contato
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
   )
 }
+
+export default Cabecalho

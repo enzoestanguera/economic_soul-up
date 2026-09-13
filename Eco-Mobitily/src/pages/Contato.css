@@ -1,38 +1,105 @@
-.contato-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+.contato-main { padding: var(--space-5) 0; }
+
+.contato-intro { text-align: left; margin-bottom: var(--space-3); }
+.contato-intro p { color: var(--color-muted); margin: 0; }
+
+.container-pagina {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .contatos {
-  text-align: center;
+  width: min(100%, 720px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
 }
 
-.icone-contato {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  margin: 20px 0;
+.contatos h2 { grid-column: 1 / -1; margin: 0; }
+.contato-explicacao { grid-column: 1 / -1; margin: -8px 0 0; color: var(--color-muted); font-size: 0.9rem; }
+
+.item-contato {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  background: var(--color-surface);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
 }
+
+.item-contato p { font-size: 0.88rem; color: var(--color-ink); margin: 0; overflow-wrap: anywhere; }
+.item-contato a { color: var(--color-ink); text-decoration: none; }
+.item-contato a:hover { color: var(--color-azure); }
+
+.icone-contato {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 50%;
+  filter: grayscale(1);
+}
+
+.icone-contato--whatsapp {
+  filter: none;
+}
+
+.icone-svg { width: 32px; height: 32px; flex-shrink: 0; color: var(--color-ink); }
+
+.container-contato { width: min(100%, 720px); }
+
 #meuFormulario {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 40px;
+  gap: var(--space-2);
+  width: 100%;
+  background: var(--color-surface);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border-top: 4px solid var(--color-leaf);
 }
+
+#meuFormulario h2 { margin-bottom: 2px; }
+#meuFormulario p { color: var(--color-muted); font-size: 0.88rem; margin: -8px 0 2px; }
+
+#meuFormulario label { font-size: 0.84rem; font-weight: 600; color: var(--color-indigo-dark); margin-bottom: -8px; }
 
 #meuFormulario input,
 #meuFormulario textarea {
-  padding: 10px;
-  font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
 }
 
-#meuFormulario textarea {
-  min-height: 120px;
-  resize: vertical;
-}
+#meuFormulario input:focus,
+#meuFormulario textarea:focus { outline: 2px solid rgba(29, 143, 225, 0.25); border-color: var(--color-azure); }
+#meuFormulario textarea { min-height: 130px; resize: vertical; }
 
 #meuFormulario button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 12px;
+  background: var(--color-leaf);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 700;
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#meuFormulario button:hover { background: var(--color-indigo); transform: translateY(-1px); }
+
+@media screen and (max-width: 760px) {
+  .contatos { grid-template-columns: 1fr; }
+  .contatos h2 { grid-column: auto; }
 }

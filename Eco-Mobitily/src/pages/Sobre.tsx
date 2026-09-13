@@ -1,40 +1,116 @@
-import { Cabecalho } from '../components/Cabecalho'
+import Cabecalho from '../components/Cabecalho'
 import climaImg from '../assets/img/mudancas-climaticas.jpg'
 import './Sobre.css'
 
 function Sobre() {
   return (
     <>
-      <Cabecalho titulo="Sobre o projeto" />
+      <Cabecalho />
 
-      <h1>Propósito do Projeto</h1>
-      <p>
-        Tendo em vista que nós somos o público alvo do projeto que escolhemos nesse Challenge, decidimos pôr
-        isso em prática. Passamos por isso todo dia, o que não é difícil acontecer, considerando que andar
-        de ônibus, metrô e entre outros meios de transporte são realidade de quase todos os cidadãos do
-        planeta. Porém aqui em São Paulo, uma das maiores metrópoles do mundo, é um pouco diferente, estamos
-        no top 10 de cidades mais poluentes do planeta, e devemos pensar nisso desde já, essa frase{' '}
-        <b>"devemos pensar nisso desde já"</b>, já virou um clichê, desde o Tratado de Paris em 2015, ou o
-        Protocolo de Kyoto em 1997. Esses foram grandes momentos onde toda a humanidade se juntou para
-        diminuir a emissão de gás carbônico e diminuição do efeito estufa, então, é melhor entrarmos nisso
-        agora, do que deixar para depois.
-        <br />
-        <img src={climaImg} alt="Gráfico Mudanças Climáticas" className="grafico-clima" />
-        Nosso projeto visa as pessoas serem recompensadas após fazerem atos saudáveis ao planeta, no nosso
-        sistema de contagem e troca de pontos isso é melhor explicado. Onde o usuário pode fazer a troca de
-        pontos para créditos imediatamente. Para ganhar pontos, você deve fazer ações sustentáveis e provar
-        que fez, assim, cada uma dessas ações gera uma certa quantidade de pontos, os quais você pode trocar
-        por créditos para serem usados em transportes públicos. Essa é a ideia inicial, mas nada impede de
-        haver parcerias entre empresas, e assim existirem missões especiais, ou existir outras opções para
-        troca dos pontos, mas isso é apenas uma virtude no momento.
-        <br />
-        <br />
-        Por fim, nós do grupo apenas gostaríamos de dizer uma última vez que esse projeto é bem importante
-        para nós, já que, como dito antes, somos o público alvo, e queremos que isso funcione, de verdade. O
-        sucesso de um projeto como esse, é o sucesso de todo o Mundo, mesmo que seja pouco, com isso ajudamos
-        o meio ambiente, prolongamos a vida do nosso planeta, para que assim, novos projetos como esse
-        possam aparecer no futuro.
-      </p>
+      <main className="container">
+        <section className="sobre-hero">
+          <span className="eyebrow">Nosso porquê</span>
+          <h1>Sobre o ECO Mobility SoulUp</h1>
+          <p className="sobre-hero__lead">
+            Uma proposta de mobilidade sustentável que transforma ações ecológicas em uma experiência
+            gamificada de pontos, evolução e recompensas.
+          </p>
+        </section>
+
+        <div className="sobre-conteudo">
+          <section className="sobre-introducao">
+            <h2>O propósito do projeto</h2>
+            <p>
+              O ECO Mobility SoulUp foi desenvolvido para incentivar a adoção de hábitos sustentáveis
+              relacionados à mobilidade. A ideia surgiu a partir do desafio de pensar em soluções para uma
+              realidade que faz parte da rotina de muitas pessoas: os deslocamentos urbanos e os impactos
+              associados a eles.
+            </p>
+            <p>
+              Em vez de tratar a sustentabilidade apenas como informação, o projeto utiliza uma mecânica de
+              gamificação. O usuário participa de missões ecológicas, acumula pontos conforme conclui as
+              atividades e consegue visualizar uma estimativa do CO₂ economizado durante sua trajetória.
+            </p>
+            <img src={climaImg} alt="Gráfico sobre mudanças climáticas" className="grafico-clima" />
+            <p className="imagem-legenda">
+              A sustentabilidade e a mobilidade urbana são temas centrais na proposta do projeto.
+            </p>
+          </section>
+
+          <section>
+            <div className="recompensa-card">
+              <h2>Como funciona a solução</h2>
+              <p>
+                O funcionamento parte de um ciclo simples. O usuário consulta as missões disponíveis,
+                seleciona uma atividade e registra sua conclusão. Cada missão possui uma quantidade de
+                pontos associada e uma estimativa de CO₂ economizado, que é utilizada para compor a
+                trajetória ecológica.
+              </p>
+              <p>
+                Os pontos acumulados podem ser consultados durante a utilização do sistema e também
+                utilizados para o resgate de vouchers. Quando um voucher é resgatado, a operação fica
+                registrada no histórico, permitindo acompanhar as recompensas obtidas ao longo da
+                experiência.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div className="recompensa-card">
+              <h2>Objetivos do SoulUp</h2>
+              <p>
+                O primeiro objetivo é incentivar comportamentos sustentáveis relacionados à mobilidade por
+                meio de uma experiência simples e participativa. A gamificação ajuda a transformar a
+                realização das missões em uma jornada de evolução, na qual o usuário consegue visualizar
+                seus resultados.
+              </p>
+              <p>
+                Outro objetivo é tornar o impacto das ações mais perceptível. Além dos pontos, o sistema
+                registra a estimativa de CO₂ economizado e apresenta a evolução do usuário por meio de
+                níveis de sustentabilidade, criando referências para acompanhar seu progresso.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div className="recompensa-card">
+              <h2>Por que o SoulUp?</h2>
+              <p>
+                A proposta se diferencia por unir uma questão cotidiana, a mobilidade urbana, a uma
+                mecânica de participação e recompensa. O usuário não apenas consulta uma solução: ele
+                participa das missões, acumula pontos, acompanha sua trajetória ecológica e pode trocar
+                parte desses pontos por vouchers.
+              </p>
+              <p>
+                Essa combinação busca tornar o tema da sustentabilidade mais próximo da rotina e criar um
+                incentivo para que o usuário continue participando. O projeto também permite visualizar
+                diferentes níveis de evolução: Iniciante Sustentável, Explorador Verde, Guardião Ecológico e
+                Mestre da Sustentabilidade.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <div className="recompensa-card">
+              <h2>Impacto esperado</h2>
+              <p>
+                Esperamos que o SoulUp contribua para aumentar o interesse por práticas sustentáveis de
+                mobilidade e ajude o usuário a perceber a relação entre suas ações, sua pontuação e a
+                estimativa de CO₂ economizado.
+              </p>
+              <p>
+                Como projeto acadêmico, a solução também demonstra como recursos de tecnologia e
+                gamificação podem ser utilizados para apoiar uma proposta de impacto positivo, mantendo o
+                foco em ações que podem ser registradas e acompanhadas pelo próprio usuário.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; Todos os direitos reservados — ECO Mobility SoulUp — 2026</p>
+      </footer>
     </>
   )
 }
