@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
+/* Breakpoints definidos*/
+@theme {
+  --breakpoint-sm: 30rem; /* 480px: mobile grande */
+  --breakpoint-md: 48rem; /* 768px: tablet */
+  --breakpoint-lg: 62rem; /* 992px: desktop */
+}
+
 :root {
   --color-ink: #171b2e;
   --color-indigo: #3b2f86;
@@ -25,13 +34,6 @@
   --radius-sm: 8px;
   --radius-md: 16px;
   --shadow-card: 0 10px 30px rgba(23, 27, 46, 0.08);
-}
-
-/*Comportamento do Css*/
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 /*Fundo do site*/
