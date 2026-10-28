@@ -13,6 +13,12 @@ export function Cabecalho() {
         <ul className="cabecalho-ul">
           <li className="cabecalho-li">
             <span className="cabecalho-bullet">•</span>
+            <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <Link to="/missoes" className="cabecalho-link">
+              Missões
+            </Link>
+          </li>
             <Link to="/sobre" className="cabecalho-link">
               Sobre
             </Link>

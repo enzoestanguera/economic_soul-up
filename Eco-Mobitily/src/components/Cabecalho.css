@@ -73,3 +73,14 @@
     gap: 12px;
   }
 }
+
+.cabecalho-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
