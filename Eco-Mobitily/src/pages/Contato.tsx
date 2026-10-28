@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from 'react'
-import { Cabecalho } from '../components/Cabecalho'
 import whatsappImg from '../assets/img/whatsapp.jpg'
 import './Contato.css'
 
@@ -22,7 +21,6 @@ function Contato() {
 
   return (
     <>
-      <Cabecalho />
 
       <main className="container contato-main">
         <section className="contato-intro">

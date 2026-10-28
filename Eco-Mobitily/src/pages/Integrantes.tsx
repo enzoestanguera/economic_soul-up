@@ -1,4 +1,3 @@
-import Cabecalho from '../components/Cabecalho'
 import alvaroImg from '../assets/img/alvaro.jpg'
 import arthurImg from '../assets/img/arthur.jpg'
 import dhiegoImg from '../assets/img/dhiego.jpg'
@@ -61,8 +60,6 @@ const integrantes: Integrante[] = [
 function Integrantes() {
   return (
     <>
-      <Cabecalho />
-
       <main className="container">
         <section className="integrantes-hero">
           <span className="eyebrow">Equipe SoulDevs</span>

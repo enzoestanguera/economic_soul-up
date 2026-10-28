@@ -1,11 +1,9 @@
-import Cabecalho from '../components/Cabecalho'
 import metroImg from '../assets/img/metro.jpg'
 import './Home.css'
 
 function Home() {
   return (
     <>
-      <Cabecalho />
 
       <main className="container">
         <section className="hero">

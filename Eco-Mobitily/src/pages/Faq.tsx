@@ -1,5 +1,4 @@
 import { useState, type ReactNode } from 'react'
-import Cabecalho from '../components/Cabecalho'
 import './Faq.css'
 
 type PerguntaFaq = {
@@ -137,8 +136,6 @@ function Faq() {
 
   return (
     <>
-      <Cabecalho />
-
       <main>
         <section className="faq-hero container">
           <span className="eyebrow">Dúvidas comuns</span>

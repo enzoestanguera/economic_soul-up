@@ -1,12 +1,9 @@
-import Cabecalho from '../components/Cabecalho'
 import climaImg from '../assets/img/mudancas-climaticas.jpg'
 import './Sobre.css'
 
 function Sobre() {
   return (
     <>
-      <Cabecalho />
-
       <main className="container">
         <section className="sobre-hero">
           <span className="eyebrow">Nosso porquê</span>

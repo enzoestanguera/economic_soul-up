@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --color-ink: #171b2e;
   --color-indigo: #3b2f86;
@@ -25,9 +27,7 @@
   --shadow-card: 0 10px 30px rgba(23, 27, 46, 0.08);
 }
 
-@import "tailwindcss";
-
-/* Reset Css uniforme e comportamento do css */
+/*Comportamento do Css*/
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
