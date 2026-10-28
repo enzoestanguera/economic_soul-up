@@ -35,6 +35,12 @@ export function Cabecalho() {
               Contato
             </Link>
           </li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <Link to="/ranking" className="cabecalho-link">
+              Ranking
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

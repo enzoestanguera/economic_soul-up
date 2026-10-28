@@ -7,6 +7,7 @@ import Faq from './pages/Faq';
 import Contato from './pages/Contato';
 import NotFound from './pages/NotFound';
 import SolucaoDados from './pages/SolucaoDados';
+import Ranking from './pages/Ranking';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/contato" element={<Contato />} />
         <Route path="/solucao" element={<SolucaoDados />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/ranking" element={<Ranking />} />
       </Routes>
     </>
   );
