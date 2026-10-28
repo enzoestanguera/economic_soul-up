@@ -11,7 +11,7 @@ import SolucaoDados from './pages/SolucaoDados';
 export default function App() {
   return (
     <>
-      <Cabecalho titulo="Eco-Mobility" />
+      <Cabecalho />
 
       <Routes>
         <Route path="/" element={<Home />} />
