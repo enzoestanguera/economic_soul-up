@@ -4,7 +4,6 @@ import './Home.css'
 function Home() {
   return (
     <>
-
       <main className="container">
         <section className="hero">
           <span className="eyebrow hero__eyebrow">Challenge Soul Up · Mobilidade Urbana</span>

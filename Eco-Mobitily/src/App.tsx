@@ -6,11 +6,11 @@ import Integrantes from './pages/Integrantes';
 import Faq from './pages/Faq';
 import Contato from './pages/Contato';
 import NotFound from './pages/NotFound';
+import SolucaoDados from './pages/SolucaoDados';
 
 export default function App() {
   return (
     <>
-      {/* O cabeçalho fica aqui, aparecendo apenas uma vez globalmente */}
       <Cabecalho titulo="Eco-Mobility" />
 
       <Routes>
@@ -19,6 +19,7 @@ export default function App() {
         <Route path="/integrantes" element={<Integrantes />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="/solucao" element={<SolucaoDados />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
