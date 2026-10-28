@@ -1,40 +1,51 @@
-const api_url = "http://localhost:8080/api";
+const API_URL: string =
+  import.meta.env.VITE_API_URL ?? 'https://soulup-api-78mu.onrender.com/api'
 
-export interface EcoItems {
-    id: number;
-    usuario: string;
-    transportes: string;
-    pontos: number;
+export interface Missao {
+  id: number
+  nome: string
+  descricao: string
+  pontos: number
+  co2Economizado: number
 }
 
-export async function getEcoItems(): Promise<EcoItems[]> {
-    try {
-        const response = await fetch(`${api_url}/ecoitems`);
-        if (!response.ok) {
-            throw new Error(`Erro na Api status: ${response.status}`);
-        }
-        return await response.json();
-    } catch (error) {
-        console.error("Erro ao buscar os itens ecológicos:", error);
-        return [];
-    }
+export interface Voucher {
+  id: number
+  nome: string
+  descricao: string
+  pontosNecessarios: number
 }
 
-export async function createEcoItem(item: EcoItems): Promise<EcoItems> {
+export interface Usuario {
+  nome: string
+  email: string
+  pontos: number
+}
+
+async function requisitar<T>(caminho: string): Promise<T> {
+  let resposta: Response
+
   try {
-    const response = await fetch(`${api_url}/eco-items`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    });
-    if (!response.ok) {
-      throw new Error("Erro ao enviar dados para a API.");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Erro no POST:", error);
-    throw error;
+    resposta = await fetch(`${API_URL}${caminho}`)
+  } catch {
+    throw new Error('Não foi possível conectar à API. Tente novamente em instantes.')
   }
+
+  if (!resposta.ok) {
+    throw new Error(`A API respondeu com erro ${resposta.status} em ${caminho}.`)
+  }
+
+  return (await resposta.json()) as T
+}
+
+export function getMissoes(): Promise<Missao[]> {
+  return requisitar<Missao[]>('/missoes')
+}
+
+export function getVouchers(): Promise<Voucher[]> {
+  return requisitar<Voucher[]>('/vouchers')
+}
+
+export function getUsuarios(): Promise<Usuario[]> {
+  return requisitar<Usuario[]>('/usuarios')
 }
