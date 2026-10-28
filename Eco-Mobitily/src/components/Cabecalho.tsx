@@ -13,12 +13,24 @@ export function Cabecalho() {
         <ul className="cabecalho-ul">
           <li className="cabecalho-li">
             <span className="cabecalho-bullet">•</span>
-            <li className="cabecalho-li">
-            <span className="cabecalho-bullet">•</span>
             <Link to="/missoes" className="cabecalho-link">
               Missões
             </Link>
           </li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <Link to="/vouchers" className="cabecalho-link">
+              Vouchers
+            </Link>
+          </li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
+            <Link to="/ranking" className="cabecalho-link">
+              Ranking
+            </Link>
+          </li>
+          <li className="cabecalho-li">
+            <span className="cabecalho-bullet">•</span>
             <Link to="/sobre" className="cabecalho-link">
               Sobre
             </Link>
@@ -39,12 +51,6 @@ export function Cabecalho() {
             <span className="cabecalho-bullet">•</span>
             <Link to="/contato" className="cabecalho-link">
               Contato
-            </Link>
-          </li>
-          <li className="cabecalho-li">
-            <span className="cabecalho-bullet">•</span>
-            <Link to="/ranking" className="cabecalho-link">
-              Ranking
             </Link>
           </li>
         </ul>
