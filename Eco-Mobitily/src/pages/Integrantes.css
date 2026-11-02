@@ -52,17 +52,16 @@
 }
 
 .integrante-foto {
+  @apply rounded-full object-cover;
   width: 120px;
   height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
   margin-bottom: var(--space-2);
   border: 2px solid var(--color-indigo-dark);
 }
 
 .integrante_card h3 {
+  @apply text-base;
   margin: 4px 0;
-  font-size: 1rem;
 }
 
 .integrante_card p {
@@ -73,24 +72,23 @@
 
 .integrante-turma {
   margin-bottom: var(--space-2) !important;
-  font-weight: 600;
+  @apply font-semibold;
   color: var(--color-indigo) !important;
 }
 
 .integrante_card__links {
-  display: flex;
+  @apply flex;
   gap: var(--space-2);
   margin-top: auto;
 }
 
 .integrante_card__links a {
+  @apply font-semibold no-underline;
   font-size: 0.82rem;
-  font-weight: 600;
-  text-decoration: none;
 }
 
 .integrante_card__links a:hover {
-  text-decoration: underline;
+  @apply underline;
 }
 
 .integrantes-sobre {
