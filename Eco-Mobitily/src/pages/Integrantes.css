@@ -1,5 +1,7 @@
+@reference "tailwindcss";
+
 .integrantes-hero {
-  text-align: left;
+  @apply text-left;
   padding: var(--space-5) 0 var(--space-3);
 }
 
