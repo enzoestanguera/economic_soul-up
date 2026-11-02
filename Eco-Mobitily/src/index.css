@@ -1,15 +1,10 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
-
-/* Breakpoints definidos*/
 @theme {
   --breakpoint-sm: 30rem; /* 480px: mobile grande */
   --breakpoint-md: 48rem; /* 768px: tablet */
   --breakpoint-lg: 62rem; /* 992px: desktop */
-}
 
-:root {
   --color-ink: #171b2e;
   --color-indigo: #3b2f86;
   --color-indigo-dark: #241d5c;
@@ -24,19 +19,10 @@
   --font-display: 'Poppins', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
 
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 40px;
-  --space-5: 64px;
-
   --container-max: 1100px;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --shadow-card: 0 10px 30px rgba(23, 27, 46, 0.08);
 }
 
-/*Fundo do site*/
+/* Fundo do site */
 body {
   position: relative;
   min-height: 100vh;
@@ -60,7 +46,7 @@ body::before {
   z-index: -1;
 }
 
-/*Container*/
+/* Container */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -68,7 +54,7 @@ body::before {
   padding: 32px 24px;
 }
 
-/*Hero*/
+/* Hero */
 .hero {
   padding: 32px 0 16px;
 }
@@ -90,7 +76,7 @@ body::before {
   margin-bottom: 16px;
 }
 
-/*Imagem Hero*/
+/* Imagem Hero */
 .hero-imagem {
   width: 100%;
   max-width: 760px;
@@ -111,7 +97,7 @@ body::before {
   object-fit: cover;
 }
 
-/*Seções*/
+/* Seções */
 .secao {
   padding: 16px 0;
   border-top: 1px solid #e2e8f0;
@@ -134,7 +120,7 @@ body::before {
   line-height: 1.6;
 }
 
-/*Rodapé*/
+/* Rodapé */
 footer {
   width: 100%;
   background-color: #231b54;
@@ -149,7 +135,7 @@ footer {
   text-align: center;
 }
 
-/*Responsividade*/
+/* Responsividade */
 @media screen and (max-width: 640px) {
   .container {
     padding: 20px 16px;
