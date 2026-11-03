@@ -1,3 +1,12 @@
+import whatsappImg from '../assets/img/whatsapp.jpg'
+
+const itemContato =
+  'flex items-center gap-3 min-h-[72px] bg-[var(--color-surface)] p-4 rounded-xl shadow-md'
+
+const textoContato = 'm-0 text-[0.88rem] leading-snug text-[var(--color-ink)] [overflow-wrap:anywhere]'
+
+const linkContato = 'text-[var(--color-ink)] no-underline hover:text-[var(--color-azure)]'
+
 function Contato() {
   return (
     <>
@@ -16,7 +25,39 @@ function Contato() {
 
         {/* .container-pagina */}
         <div className="flex flex-col gap-8">
-          {/* seções de contato e formulário entram nos próximos commits */}
+          <section
+            className="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1"
+            aria-labelledby="meios-contato"
+          >
+            <h2 id="meios-contato" className="col-span-full m-0 max-[760px]:col-auto">
+              Meios de contato
+            </h2>
+            <p className="col-span-full -mt-1 mb-2 text-[0.9rem] leading-relaxed text-[var(--color-muted)]">
+              Você pode utilizar nossos canais para tirar dúvidas sobre a proposta, enviar sugestões,
+              compartilhar feedback ou buscar mais informações sobre o projeto acadêmico.
+            </p>
+
+            {/* WhatsApp (sem grayscale) */}
+            <div className={itemContato}>
+              <img
+                src={whatsappImg}
+                alt="Logo do WhatsApp"
+                className="size-[34px] shrink-0 rounded-full object-contain"
+              />
+              <p className={textoContato}>
+                <b>WhatsApp</b>
+                <br />
+                <a
+                  href="https://wa.me/5511988884321"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={linkContato}
+                >
+                  (11) 98888-4321
+                </a>
+              </p>
+            </div>
+          </section>
         </div>
       </main>
 
