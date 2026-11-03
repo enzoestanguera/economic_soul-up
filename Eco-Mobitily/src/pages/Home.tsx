@@ -1,13 +1,12 @@
 import metroImg from '../assets/img/metro.jpg'
-import './Home.css'
 
 function Home() {
   return (
     <>
-      <main className="container">
-        <section className="hero">
-          <span className="eyebrow hero__eyebrow">Challenge Soul Up · Mobilidade Urbana</span>
-          <h1 className="index-cabecalho">Mobilidade urbana mais sustentável, uma missão de cada vez</h1>
+      <main className="mx-auto w-full max-w-[1100px] px-6 py-8 [@media(max-width:640px)]:px-4 [@media(max-width:640px)]:py-5">
+        <section className="p-0 [&_p]:text-[1rem] [&_p]:max-w-[66ch]">
+          <span className="block mb-0">Challenge Soul Up · Mobilidade Urbana</span>
+          <h1 className="font-['Poppins',sans-serif] text-[2rem] text-[#1b1947] font-bold leading-[1.25] mb-4 [@media(max-width:640px)]:text-[1.5rem] [@media(max-width:640px)]:leading-[1.3]">Mobilidade urbana mais sustentável, uma missão de cada vez</h1>
           <p>
             O ECO Mobility SoulUp nasceu a partir do desafio de pensar em alternativas para problemas
             relacionados à mobilidade urbana. Como usuários de transporte público, identificamos uma
@@ -22,16 +21,16 @@ function Home() {
           </p>
         </section>
 
-        <div className="hero__imagem-wrap">
+        <div className="w-[min(100%,760px)] m-0 rounded-3xl overflow-hidden p-2.5 bg-[linear-gradient(135deg,#f4f8ff,#dcecff)] border-2 border-indigo-dark shadow-[0_14px_35px_rgba(23,27,46,0.12)]">
           <img
             src={metroImg}
             alt="Estação de metrô, um dos meios de transporte contemplados pelo projeto"
-            className="image-index"
+            className="w-full h-auto rounded-2xl block object-cover"
           />
         </div>
 
-        <section className="secao">
-          <h2>O que é o SoulUp?</h2>
+        <section className="py-0 border-t border-line">
+          <h2 className="mb-0 font-['Poppins',sans-serif] text-[1.5rem] font-bold text-[#1b1947] [@media(max-width:640px)]:text-[1.25rem]">O que é o SoulUp?</h2>
           <p>
             O SoulUp é uma proposta de solução de mobilidade sustentável baseada em recompensas. Em vez de
             apenas apresentar informações sobre sustentabilidade, o projeto cria uma dinâmica em que ações
@@ -44,8 +43,8 @@ function Home() {
           </p>
         </section>
 
-        <section className="secao">
-          <h2>Como a solução funciona</h2>
+        <section className="py-0 border-t border-line">
+          <h2 className="mb-0 font-['Poppins',sans-serif] text-[1.5rem] font-bold text-[#1b1947] [@media(max-width:640px)]:text-[1.25rem]">Como a solução funciona</h2>
           <p>
             A lógica é simples: o usuário escolhe uma missão disponível, realiza a atividade e registra sua
             conclusão. A missão concluída gera a quantidade de pontos correspondente e sua estimativa de
@@ -58,8 +57,8 @@ function Home() {
           </p>
         </section>
 
-        <section className="secao">
-          <h2>Impacto esperado</h2>
+        <section className="py-0 border-t border-line">
+          <h2 className="mb-0 font-['Poppins',sans-serif] text-[1.5rem] font-bold text-[#1b1947] [@media(max-width:640px)]:text-[1.25rem]">Impacto esperado</h2>
           <p>
             O principal impacto esperado é incentivar a adoção de hábitos mais sustentáveis relacionados à
             mobilidade, mostrando ao usuário que pequenas ações podem ser registradas, acompanhadas e
@@ -72,8 +71,8 @@ function Home() {
           </p>
         </section>
 
-        <section className="secao">
-          <h2>Considerações finais</h2>
+        <section className="py-0 border-t border-line">
+          <h2 className="mb-0 font-['Poppins',sans-serif] text-[1.5rem] font-bold text-[#1b1947] [@media(max-width:640px)]:text-[1.25rem]">Considerações finais</h2>
           <p>
             O SoulUp surgiu da nossa identificação com o problema apresentado no Challenge e da vontade de
             transformar uma questão presente no cotidiano em uma solução prática e gamificada. A proposta
@@ -88,8 +87,8 @@ function Home() {
         </section>
       </main>
 
-      <footer>
-        <p>&copy; Todos os direitos reservados — ECO Mobility SoulUp — 2026</p>
+      <footer className="w-full bg-[#231b54] px-10 py-6 text-white [@media(max-width:640px)]:px-4 [@media(max-width:640px)]:py-5">
+        <p className="m-0">&copy; Todos os direitos reservados — ECO Mobility SoulUp — 2026</p>
       </footer>
     </>
   )
