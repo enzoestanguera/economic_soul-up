@@ -1,3 +1,4 @@
+import { useState, type FormEvent } from 'react'
 import whatsappImg from '../assets/img/whatsapp.jpg'
 
 const itemContato =
@@ -13,6 +14,22 @@ const campoForm =
   'w-full p-3 bg-[var(--color-paper)] border border-[var(--color-line)] rounded-lg font-[family-name:var(--font-body)] text-[0.9rem] focus:outline-2 focus:outline-[rgba(29,143,225,0.25)] focus:border-[var(--color-azure)]'
 
 function Contato() {
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [mensagem, setMensagem] = useState('')
+
+  function handleSubmit(evento: FormEvent<HTMLFormElement>) {
+    evento.preventDefault()
+
+    alert(
+      `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso. Em breve entraremos em contato pelo e-mail: ${email}.`,
+    )
+
+    setNome('')
+    setEmail('')
+    setMensagem('')
+  }
+
   return (
     <>
       <main className="mx-auto w-full max-w-[720px] px-4 py-12">
@@ -119,6 +136,7 @@ function Contato() {
           <section className="w-full">
             <form
               id="meuFormulario"
+              onSubmit={handleSubmit}
               className="flex w-full flex-col gap-2 rounded-2xl border-t-4 border-t-[var(--color-leaf)] bg-[var(--color-surface)] p-6 shadow-md sm:p-8"
             >
               <h2 className="mt-0 mb-1">Formulário de contato</h2>
@@ -136,6 +154,8 @@ function Contato() {
                 id="nome"
                 placeholder="Seu nome completo"
                 aria-label="Nome completo"
+                value={nome}
+                onChange={(evento) => setNome(evento.target.value)}
                 required
                 className={campoForm}
               />
@@ -148,6 +168,8 @@ function Contato() {
                 id="email"
                 placeholder="seuemail@exemplo.com"
                 aria-label="Seu endereço de email"
+                value={email}
+                onChange={(evento) => setEmail(evento.target.value)}
                 required
                 className={campoForm}
               />
@@ -159,6 +181,8 @@ function Contato() {
                 id="mensagem"
                 placeholder="Escreva sua mensagem..."
                 aria-label="Sua mensagem para nós"
+                value={mensagem}
+                onChange={(evento) => setMensagem(evento.target.value)}
                 required
                 className={`${campoForm} min-h-[130px] resize-y`}
               />
