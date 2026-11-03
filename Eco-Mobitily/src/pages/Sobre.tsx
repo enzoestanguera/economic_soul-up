@@ -104,8 +104,8 @@ function Sobre() {
         </div>
       </main>
 
-      <footer>
-        <p>&copy; Todos os direitos reservados — ECO Mobility SoulUp — 2026</p>
+      <footer className="w-full bg-[#231b54] px-10 py-6 text-white [@media(max-width:640px)]:px-4 [@media(max-width:640px)]:py-5">
+        <p className="m-0">&copy; Todos os direitos reservados — ECO Mobility SoulUp — 2026</p>
       </footer>
     </>
   )
