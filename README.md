@@ -3,7 +3,7 @@ Projeto Desenvolvido para o Challenge
 ===================================================================================================================================================================
 Link do Repositório no Github: https://github.com/enzoestanguera/economic_soul-up.git
 
-============================================================ ECO Mobility Soul Up ================================================================
+======================= ECO Mobility Soul Up =======================
 
 
 Nossa ideia com esse projeto é tornar a vida das pessoas que são nosso público alvo mais tranquila e fácil no sentido de transporte público. O projeto se baseia em um sistema de missões que geram pontos para a pessoa, e com esses pontos podendo ser trocados por créditos, que por sua vez são gastos com passsagens de transporte público.
@@ -15,7 +15,12 @@ Nas pastas, temos a src que contém todo o conteúdo, a assets, contendo a pasta
 Para executar esse projeto localmente, abra o terminal git bash no Visual Studio Code, e use o comando 
 npm install para instalar as dependências do projeto, como a pasta node_modules, e após isso usar o comando npm run dev para executar o código e ver o site.
 
-=============================================================== Integrantes ======================================================================
+<img width="1600" height="759" alt="image" src="https://github.com/user-attachments/assets/5a41a621-ce7b-496a-ba2f-62d149a8e594" />
+Essa página é uma das mais visualmente legais, onde mostra toda a equipe e suas redes sociais relevantes ao projeto.
+
+======================= Integrantes =======================
+
+
 Álvaro Morais Holanda - RM: 568607 Github: https://github.com/AlvaroHolanda Linkedin: https://www.linkedin.com/in/%C3%A1lvaro-holanda-b9bb03322/?isSelfProfile=true
 
 Arthur Arruda da Silva - RM: 569593 Github: https://github.com/arthurarrudaa Linkedin: https://www.linkedin.com/in/arthur-arruda-61aa453b0/
