@@ -7,6 +7,11 @@ const textoContato = 'm-0 text-[0.88rem] leading-snug text-[var(--color-ink)] [o
 
 const linkContato = 'text-[var(--color-ink)] no-underline hover:text-[var(--color-azure)]'
 
+const labelForm = 'mt-2 text-[0.84rem] font-semibold text-[var(--color-indigo-dark)]'
+
+const campoForm =
+  'w-full p-3 bg-[var(--color-paper)] border border-[var(--color-line)] rounded-lg font-[family-name:var(--font-body)] text-[0.9rem] focus:outline-2 focus:outline-[rgba(29,143,225,0.25)] focus:border-[var(--color-azure)]'
+
 function Contato() {
   return (
     <>
@@ -25,6 +30,7 @@ function Contato() {
 
         {/* .container-pagina */}
         <div className="flex flex-col gap-8">
+          {/* .contatos */}
           <section
             className="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1"
             aria-labelledby="meios-contato"
@@ -107,6 +113,63 @@ function Contato() {
                 </a>
               </p>
             </div>
+          </section>
+
+          {/* .container-contato */}
+          <section className="w-full">
+            <form
+              id="meuFormulario"
+              className="flex w-full flex-col gap-2 rounded-2xl border-t-4 border-t-[var(--color-leaf)] bg-[var(--color-surface)] p-6 shadow-md sm:p-8"
+            >
+              <h2 className="mt-0 mb-1">Formulário de contato</h2>
+              <p className="m-0 mb-2 text-[0.88rem] leading-relaxed text-[var(--color-muted)]">
+                Preencha os campos abaixo para enviar dúvidas, sugestões, feedbacks ou comentários sobre o
+                ECO Mobility SoulUp. Sua mensagem ajuda a equipe a receber opiniões sobre a proposta e sua
+                apresentação.
+              </p>
+
+              <label htmlFor="nome" className={labelForm}>
+                Nome
+              </label>
+              <input
+                type="text"
+                id="nome"
+                placeholder="Seu nome completo"
+                aria-label="Nome completo"
+                required
+                className={campoForm}
+              />
+
+              <label htmlFor="email" className={labelForm}>
+                E-mail
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="seuemail@exemplo.com"
+                aria-label="Seu endereço de email"
+                required
+                className={campoForm}
+              />
+
+              <label htmlFor="mensagem" className={labelForm}>
+                Mensagem
+              </label>
+              <textarea
+                id="mensagem"
+                placeholder="Escreva sua mensagem..."
+                aria-label="Sua mensagem para nós"
+                required
+                className={`${campoForm} min-h-[130px] resize-y`}
+              />
+
+              <button
+                type="submit"
+                className="mt-4 w-full cursor-pointer rounded-lg border-none bg-[var(--color-leaf)] p-3 font-[family-name:var(--font-body)] font-bold text-white transition-[background-color,transform] duration-200 ease-in-out hover:-translate-y-px hover:bg-[var(--color-indigo)]"
+              >
+                Enviar mensagem
+              </button>
+            </form>
           </section>
         </div>
       </main>
