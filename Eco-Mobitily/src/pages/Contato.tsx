@@ -57,6 +57,56 @@ function Contato() {
                 </a>
               </p>
             </div>
+
+            {/* E-mail */}
+            <div className={itemContato}>
+              <svg
+                className="size-8 shrink-0 text-[var(--color-ink)]"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.8}
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m3 7 9 6 9-6"></path>
+              </svg>
+              <p className={textoContato}>
+                <b>E-mail</b>
+                <br />
+                <a href="mailto:contato@soulup.eco" className={linkContato}>
+                  contato@soulup.eco
+                </a>
+              </p>
+            </div>
+
+            {/* Instagram */}
+            <div className={itemContato}>
+              <svg
+                className="size-8 shrink-0 text-[var(--color-ink)]"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.8}
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.3" cy="6.7" r="0.8" fill="currentColor" stroke="none"></circle>
+              </svg>
+              <p className={textoContato}>
+                <b>Instagram</b>
+                <br />
+                <a
+                  href="https://instagram.com/soulup.eco"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={linkContato}
+                >
+                  @soulup.eco
+                </a>
+              </p>
+            </div>
           </section>
         </div>
       </main>
