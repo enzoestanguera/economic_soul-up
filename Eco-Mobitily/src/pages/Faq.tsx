@@ -1,16 +1,20 @@
 import { useState, type ReactNode } from 'react'
-import './Faq.css'
 
 type PerguntaFaq = {
   pergunta: string
   resposta: ReactNode
 }
 
+const textoResposta = 'm-0 px-4 pb-4 leading-[1.55] text-[var(--color-muted)]'
+
+const listaMissoes =
+  'm-0 list-outside list-decimal pr-4 pb-4 pl-[34px] leading-[1.55] text-[var(--color-muted)] [&>li]:mb-[5px] [&>li:last-child]:mb-0'
+
 const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'O que é a ECO Mobility SoulUp?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         A ECO Mobility SoulUp é uma proposta de solução voltada a incentivar hábitos sustentáveis
         relacionados à mobilidade. O projeto utiliza gamificação para que o usuário realize missões
         ecológicas, acumule pontos, acompanhe sua evolução e visualize uma estimativa de CO₂ economizado.
@@ -21,15 +25,18 @@ const perguntas: PerguntaFaq[] = [
     pergunta: 'Quais são as missões?',
     resposta: (
       <>
-        <p>As missões representam atividades relacionadas a práticas sustentáveis de mobilidade. No protótipo apresentado no site, elas incluem:</p>
-        <ol className="lista-missoes">
+        <p className={textoResposta}>
+          As missões representam atividades relacionadas a práticas sustentáveis de mobilidade. No
+          protótipo apresentado no site, elas incluem:
+        </p>
+        <ol className={listaMissoes}>
           <li>Ônibus Sustentável</li>
           <li>Metrô Inteligente</li>
           <li>Pedalada Verde</li>
           <li>Carona Compartilhada</li>
           <li>Caminhada Saudável</li>
         </ol>
-        <p>
+        <p className={textoResposta}>
           Ao concluir uma missão, o usuário registra sua participação, recebe os pontos correspondentes e
           contribui para o cálculo de sua trajetória ecológica.
         </p>
@@ -39,7 +46,7 @@ const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'Como faço para trocar meus pontos?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         Os pontos acumulados podem ser utilizados para resgatar os vouchers disponíveis no sistema. Antes
         do resgate, é verificado se o usuário possui pontos suficientes; depois da operação, os pontos
         correspondentes são descontados e o resgate fica registrado no histórico.
@@ -49,7 +56,7 @@ const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'Como o SoulUp contribui para a sustentabilidade?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         O SoulUp busca incentivar a adoção de hábitos sustentáveis relacionados à mobilidade por meio de
         missões e recompensas. A aplicação também apresenta uma estimativa de CO₂ economizado a partir das
         missões concluídas, permitindo que o usuário acompanhe esse indicador durante sua trajetória.
@@ -59,7 +66,7 @@ const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'Quem pode utilizar a solução?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         A proposta é voltada a usuários que desejam participar de missões relacionadas à mobilidade
         sustentável e acompanhar sua evolução por meio de pontos e indicadores. No projeto desenvolvido, o
         sistema prevê cadastro e autenticação de usuários para acesso às funcionalidades.
@@ -69,7 +76,7 @@ const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'Quais problemas o SoulUp busca resolver?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         O projeto parte de desafios relacionados à mobilidade urbana e à necessidade de incentivar hábitos
         mais sustentáveis. A proposta procura transformar esse problema em uma experiência participativa,
         utilizando missões, pontos, níveis e vouchers para estimular o envolvimento do usuário.
@@ -79,7 +86,7 @@ const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'Como a tecnologia participa da solução?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         A tecnologia organiza as principais etapas da experiência, como cadastro, missões, pontuação,
         trajetória ecológica, vouchers e histórico. Na implementação Java, essas funcionalidades são
         estruturadas em uma aplicação com entidades, classes DAO e conexão com banco de dados Oracle.
@@ -89,7 +96,7 @@ const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'O SoulUp rastreia meus deslocamentos por GPS?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         Não. A integração com GPS e o rastreamento em tempo real de deslocamentos não fazem parte do
         escopo atual do projeto. As missões são registradas pelo usuário dentro da aplicação.
       </p>
@@ -98,7 +105,7 @@ const perguntas: PerguntaFaq[] = [
   {
     pergunta: 'Como funciona a trajetória ecológica?',
     resposta: (
-      <p>
+      <p className={textoResposta}>
         A trajetória ecológica acompanha a evolução do usuário com base nos pontos acumulados e nas
         missões concluídas. Ela também apresenta a quantidade de missões realizadas e a estimativa de CO₂
         economizado, além de classificar o usuário em níveis de sustentabilidade.
@@ -106,6 +113,8 @@ const perguntas: PerguntaFaq[] = [
     ),
   },
 ]
+
+const msgDiscreta = 'mt-[5px] rounded-lg p-2 text-center text-[0.82rem] font-semibold'
 
 function Faq() {
   const [abertas, setAbertas] = useState<Set<number>>(new Set())
@@ -137,57 +146,101 @@ function Faq() {
   return (
     <>
       <main>
-        <section className="faq-hero container">
-          <span className="eyebrow">Dúvidas comuns</span>
+        {/* .faq-hero */}
+        <section className="mx-auto max-w-[var(--container-max)] px-6 pt-12 pb-6 text-left max-[480px]:pt-8">
+          <span className="mb-2 block text-[0.84rem] font-semibold text-[var(--color-leaf)]">
+            Dúvidas comuns
+          </span>
           <h1>Perguntas frequentes</h1>
-          <p>Reunimos aqui as respostas para as dúvidas que mais recebemos sobre o projeto.</p>
+          <p className="m-0 max-w-[66ch] text-[var(--color-muted)]">
+            Reunimos aqui as respostas para as dúvidas que mais recebemos sobre o projeto.
+          </p>
         </section>
 
-        <section className="faq-container">
-          {perguntas.map((item, index) => (
-            <div className={`faq-item${abertas.has(index) ? ' ativo' : ''}`} key={item.pergunta}>
-              <button className="faq-pergunta" type="button" onClick={() => alternarPergunta(index)}>
-                {item.pergunta}
-              </button>
-              <div className="faq-resposta">{item.resposta}</div>
-            </div>
-          ))}
+        {/* .faq-container */}
+        <section className="mx-auto max-w-[760px] px-6 pt-4 pb-6">
+          {perguntas.map((item, index) => {
+            const aberta = abertas.has(index)
+
+            return (
+              <div
+                key={item.pergunta}
+                className="mb-4 overflow-hidden rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)]"
+              >
+                <button
+                  type="button"
+                  aria-expanded={aberta}
+                  onClick={() => alternarPergunta(index)}
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent p-4 text-left font-[family-name:var(--font-body)] text-[0.98rem] font-semibold text-[var(--color-indigo-dark)] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[var(--color-azure)]"
+                >
+                  {item.pergunta}
+                  <span
+                    aria-hidden="true"
+                    className={`shrink-0 text-[0.8rem] text-[var(--color-azure)] transition-transform duration-200 ease-in-out ${
+                      aberta ? 'rotate-90' : ''
+                    }`}
+                  >
+                    &#10095;
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-[max-height] duration-[250ms] ease-in-out ${
+                    aberta ? 'max-h-[500px]' : 'max-h-0'
+                  }`}
+                >
+                  {item.resposta}
+                </div>
+              </div>
+            )
+          })}
         </section>
 
-        <section className="comentario-area">
-          <div className="caixa-flutuante">
-            <h3>Deixe seu comentário</h3>
+        {/* .comentario-area */}
+        <section className="mx-auto max-w-[760px] px-6 pt-4 pb-8 max-[480px]:px-4">
+          {/* .caixa-flutuante */}
+          <div className="flex w-full flex-col gap-2 rounded-2xl border-t-4 border-t-[var(--color-azure)] bg-[var(--color-surface)] p-6 shadow-md">
+            <h3 className="m-0 text-[1.05rem] text-[var(--color-indigo)]">Deixe seu comentário</h3>
             <textarea
               id="texto-usuario"
               placeholder="Digite algo aqui..."
               aria-label="Seu comentário"
               value={comentario}
               onChange={(evento) => setComentario(evento.target.value)}
+              className="min-h-[105px] w-full resize-y rounded-lg border border-[var(--color-line)] bg-[var(--color-paper)] p-[10px] font-[family-name:var(--font-body)] text-[0.9rem]"
             />
-            <button id="btn-enviar-caixa" type="button" onClick={enviarComentario}>
+            <button
+              id="btn-enviar-caixa"
+              type="button"
+              onClick={enviarComentario}
+              className="cursor-pointer rounded-lg border-none bg-[var(--color-azure)] p-[10px] font-[family-name:var(--font-body)] font-semibold text-white transition-colors duration-200 ease-in-out hover:bg-[var(--color-indigo)]"
+            >
               Enviar comentário
             </button>
 
-            <div
-              id="caixa-sucesso"
-              className="msg-discreta msg-sucesso"
-              style={{ display: status === 'sucesso' ? 'block' : 'none' }}
-            >
-              Enviado com sucesso!
-            </div>
-            <div
-              id="caixa-erro"
-              className="msg-discreta msg-erro"
-              style={{ display: status === 'erro' ? 'block' : 'none' }}
-            >
-              Por favor, digite uma mensagem.
-            </div>
+            {status === 'sucesso' && (
+              <div
+                id="caixa-sucesso"
+                role="status"
+                className={`${msgDiscreta} border border-[#c3e6cb] bg-[var(--color-leaf-light)] text-[#155724]`}
+              >
+                Enviado com sucesso!
+              </div>
+            )}
+            {status === 'erro' && (
+              <div
+                id="caixa-erro"
+                role="alert"
+                className={`${msgDiscreta} border border-[#f5c6cb] bg-[#f8d7da] text-[#721c24]`}
+              >
+                Por favor, digite uma mensagem.
+              </div>
+            )}
           </div>
         </section>
       </main>
 
-      <footer>
-        <p>&copy; Todos os direitos reservados — ECO Mobility SoulUp — 2026</p>
+      <footer className="py-6 text-center text-[0.84rem] text-[var(--color-muted)]">
+        <p className="m-0">&copy; Todos os direitos reservados — ECO Mobility SoulUp — 2026</p>
       </footer>
     </>
   )
