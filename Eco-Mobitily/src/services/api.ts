@@ -2,7 +2,9 @@ const API_URL: string =
   import.meta.env.VITE_API_URL ?? 'https://soulup-api-78mu.onrender.com/api'
 
 export interface Missao {
-  id: number
+  id?: number | string
+  idMissao?: number | string
+  _id?: string
   nome: string
   descricao: string
   pontos: number
@@ -40,6 +42,24 @@ async function requisitar<T>(caminho: string): Promise<T> {
 
 export function getMissoes(): Promise<Missao[]> {
   return requisitar<Missao[]>('/missoes')
+}
+
+// Aceita id numérico, texto (UUID/Mongo) ou outro nome de campo.
+// Se a API não mandar id nenhum, usa a posição na lista como identificador.
+export function obterIdMissao(missao: Missao, posicao: number): string {
+  const id = missao.id ?? missao.idMissao ?? missao._id
+  return String(id ?? posicao)
+}
+
+export async function getMissaoPorId(id: string): Promise<Missao> {
+  const missoes = await requisitar<Missao[]>('/missoes')
+  const missao = missoes.find((item, posicao) => obterIdMissao(item, posicao) === id)
+
+  if (!missao) {
+    throw new Error('Missão não encontrada.')
+  }
+
+  return missao
 }
 
 export function getVouchers(): Promise<Voucher[]> {

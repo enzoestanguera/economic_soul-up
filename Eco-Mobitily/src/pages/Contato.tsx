@@ -1,4 +1,5 @@
-import { useState, type FormEvent } from 'react'
+import { useState } from 'react'
+import { useForm, type SubmitHandler } from 'react-hook-form'
 import whatsappImg from '../assets/img/whatsapp.jpg'
 
 const itemContato =
@@ -13,21 +14,33 @@ const labelForm = 'mt-2 text-[0.84rem] font-semibold text-[var(--color-indigo-da
 const campoForm =
   'w-full p-3 bg-[var(--color-paper)] border border-[var(--color-line)] rounded-lg font-[family-name:var(--font-body)] text-[0.9rem] focus:outline-2 focus:outline-[rgba(29,143,225,0.25)] focus:border-[var(--color-azure)]'
 
+const msgErro = 'mt-1 text-[0.8rem] text-red-600'
+
+type FormularioContato = {
+  nome: string
+  email: string
+  mensagem: string
+}
+
 function Contato() {
-  const [nome, setNome] = useState('')
-  const [email, setEmail] = useState('')
-  const [mensagem, setMensagem] = useState('')
+  const [enviadoPara, setEnviadoPara] = useState<FormularioContato | null>(null)
 
-  function handleSubmit(evento: FormEvent<HTMLFormElement>) {
-    evento.preventDefault()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormularioContato>({
+    mode: 'onBlur',
+    defaultValues: { nome: '', email: '', mensagem: '' },
+  })
 
-    alert(
-      `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso. Em breve entraremos em contato pelo e-mail: ${email}.`,
-    )
+  const onSubmit: SubmitHandler<FormularioContato> = async (dados) => {
+    // Simula o envio. Quando existir endpoint, troque por um fetch/POST aqui.
+    await new Promise((resolve) => setTimeout(resolve, 600))
 
-    setNome('')
-    setEmail('')
-    setMensagem('')
+    setEnviadoPara(dados)
+    reset()
   }
 
   return (
@@ -136,7 +149,8 @@ function Contato() {
           <section className="w-full">
             <form
               id="meuFormulario"
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
               className="flex w-full flex-col gap-2 rounded-2xl border-t-4 border-t-[var(--color-leaf)] bg-[var(--color-surface)] p-6 shadow-md sm:p-8"
             >
               <h2 className="mt-0 mb-1">Formulário de contato</h2>
@@ -153,12 +167,22 @@ function Contato() {
                 type="text"
                 id="nome"
                 placeholder="Seu nome completo"
-                aria-label="Nome completo"
-                value={nome}
-                onChange={(evento) => setNome(evento.target.value)}
-                required
+                autoComplete="name"
+                aria-invalid={errors.nome ? 'true' : 'false'}
+                aria-describedby={errors.nome ? 'erro-nome' : undefined}
                 className={campoForm}
+                {...register('nome', {
+                  required: 'Informe seu nome.',
+                  minLength: { value: 3, message: 'O nome deve ter pelo menos 3 caracteres.' },
+                  maxLength: { value: 80, message: 'O nome deve ter no máximo 80 caracteres.' },
+                  validate: (valor) => valor.trim().length >= 3 || 'Informe um nome válido.',
+                })}
               />
+              {errors.nome && (
+                <p id="erro-nome" role="alert" className={msgErro}>
+                  {errors.nome.message}
+                </p>
+              )}
 
               <label htmlFor="email" className={labelForm}>
                 E-mail
@@ -167,12 +191,23 @@ function Contato() {
                 type="email"
                 id="email"
                 placeholder="seuemail@exemplo.com"
-                aria-label="Seu endereço de email"
-                value={email}
-                onChange={(evento) => setEmail(evento.target.value)}
-                required
+                autoComplete="email"
+                aria-invalid={errors.email ? 'true' : 'false'}
+                aria-describedby={errors.email ? 'erro-email' : undefined}
                 className={campoForm}
+                {...register('email', {
+                  required: 'Informe seu e-mail.',
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
+                    message: 'Digite um e-mail válido, como nome@exemplo.com.',
+                  },
+                })}
               />
+              {errors.email && (
+                <p id="erro-email" role="alert" className={msgErro}>
+                  {errors.email.message}
+                </p>
+              )}
 
               <label htmlFor="mensagem" className={labelForm}>
                 Mensagem
@@ -180,19 +215,38 @@ function Contato() {
               <textarea
                 id="mensagem"
                 placeholder="Escreva sua mensagem..."
-                aria-label="Sua mensagem para nós"
-                value={mensagem}
-                onChange={(evento) => setMensagem(evento.target.value)}
-                required
+                aria-invalid={errors.mensagem ? 'true' : 'false'}
+                aria-describedby={errors.mensagem ? 'erro-mensagem' : undefined}
                 className={`${campoForm} min-h-[130px] resize-y`}
+                {...register('mensagem', {
+                  required: 'Escreva sua mensagem.',
+                  minLength: { value: 10, message: 'A mensagem deve ter pelo menos 10 caracteres.' },
+                  maxLength: { value: 500, message: 'A mensagem deve ter no máximo 500 caracteres.' },
+                })}
               />
+              {errors.mensagem && (
+                <p id="erro-mensagem" role="alert" className={msgErro}>
+                  {errors.mensagem.message}
+                </p>
+              )}
 
               <button
                 type="submit"
-                className="mt-4 w-full cursor-pointer rounded-lg border-none bg-[var(--color-leaf)] p-3 font-[family-name:var(--font-body)] font-bold text-white transition-[background-color,transform] duration-200 ease-in-out hover:-translate-y-px hover:bg-[var(--color-indigo)]"
+                disabled={isSubmitting}
+                className="mt-4 w-full cursor-pointer rounded-lg border-none bg-[var(--color-leaf)] p-3 font-[family-name:var(--font-body)] font-bold text-white transition-[background-color,transform] duration-200 ease-in-out hover:-translate-y-px hover:bg-[var(--color-indigo)] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Enviar mensagem
+                {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
               </button>
+
+              {enviadoPara && (
+                <p
+                  role="status"
+                  className="mt-3 rounded-lg bg-[var(--color-leaf-light)] p-3 text-[0.88rem] text-[var(--color-ink)]"
+                >
+                  Obrigado, {enviadoPara.nome}! Sua mensagem foi enviada com sucesso. Em breve
+                  entraremos em contato pelo e-mail: {enviadoPara.email}.
+                </p>
+              )}
             </form>
           </section>
         </div>
